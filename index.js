@@ -7,7 +7,7 @@ const port = 4000;
 // Define the target URLs for your microservices
 const service1Url = 'http://localhost:4001';
 const inventoryService2Url = 'http://localhost:4002';
-// const LiveNtifacition = 'http://localhost:4004';
+const LiveNtifacitionUrl = 'http://localhost:4004';
 
 // Proxy requests for Service 1
 app.use('/user', createProxyMiddleware({
@@ -24,6 +24,14 @@ app.use('/inventory', createProxyMiddleware({
   changeOrigin: true,
   pathRewrite: {
     '^/inventoryservice': '', 
+  },
+}));
+
+app.use('/notification', createProxyMiddleware({
+  target: LiveNtifacitionUrl,
+  changeOrigin: true,
+  pathRewrite: {
+    '^/notification': '', 
   },
 }));
 
