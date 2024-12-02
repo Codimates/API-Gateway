@@ -7,13 +7,14 @@ on:
 
 jobs:
     build-and-push:
-      name: Build and Push Docker Image
+      name: check code
       runs-on: ubuntu-latest
       steps:
         - name: Checkout code
           uses: actions/checkout@v3
 
     docker:
+      name: build and push docker image
       runs-on: ubuntu-latest
       steps:
         - name: Set up QEMU
@@ -31,5 +32,7 @@ jobs:
         - name: Build and push
           uses: docker/build-push-action@v6
           with:
+            context: .
+            file: docker/Dockerfile
             push: true
-            tags: user/app:latest
+            tags: codimates/EAD:latest
