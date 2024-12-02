@@ -35,4 +35,4 @@ jobs:
             context: .
             file: docker/Dockerfile
             push: true
-            tags: codimates/EAD:latest
+            tags: codimates/ead:latest
