@@ -16,6 +16,7 @@ jobs:
     docker:
       name: build and push docker image
       runs-on: ubuntu-latest
+      needs: [ build-and-push ]
       steps:
         - name: Set up QEMU
           uses: docker/setup-qemu-action@v3
@@ -33,6 +34,6 @@ jobs:
           uses: docker/build-push-action@v6
           with:
             context: .
-            file: docker/Dockerfile
+            file: ./docker/Dockerfile
             push: true
             tags: codimates/ead:latest
