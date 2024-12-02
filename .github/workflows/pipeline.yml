@@ -1,4 +1,4 @@
-name: Gateway Pipeline 1
+name: Gateway Pipeline
 
 on:
   push:
