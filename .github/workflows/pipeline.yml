@@ -31,4 +31,4 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: codimates/ead:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/codimates-gateway:latest
