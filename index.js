@@ -7,6 +7,7 @@ const port = 4000;
 // Define the target URLs for your microservices
 const service1Url = 'http://localhost:4001';
 const inventoryService2Url = 'http://localhost:4002';
+const orderService2Url = 'http://localhost:4004';
 
 // Proxy requests for Service 1
 app.use('/user', createProxyMiddleware({
@@ -23,6 +24,15 @@ app.use('/inventory', createProxyMiddleware({
   changeOrigin: true,
   pathRewrite: {
     '^/inventoryservice': '', 
+  },
+}));
+
+// Proxy requests for inventory management
+app.use('/order', createProxyMiddleware({
+  target: orderService2Url,
+  changeOrigin: true,
+  pathRewrite: {
+    '^/orderservice': '', 
   },
 }));
 
