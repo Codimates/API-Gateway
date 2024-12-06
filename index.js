@@ -11,8 +11,8 @@ const app = express();
 const port = 4000;
 
 // Define the target URLs for your microservices
-const service1Url = 'http://user-service:4001';
-const inventoryService2Url = 'http://productandinventory:4002';
+const service1Url = 'http://141.144.204.231/user';
+const inventoryService2Url = 'http://141.144.204.231/inventory';
 // const service1Url = 'http://localhost:4001';
 // const inventoryService2Url = 'http://localhost:4002';
 
