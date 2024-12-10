@@ -16,7 +16,7 @@ const inventoryService2Url = 'http://141.144.204.231:4002';
 const orderService2Url = 'http://141.144.204.231:4004';
 // const service1Url = 'http://localhost:4001';
 // const inventoryService2Url = 'http://localhost:4002';
-
+//hi
 // Proxy requests for Service 1
 app.use('/user', createProxyMiddleware({
   target: service1Url,
